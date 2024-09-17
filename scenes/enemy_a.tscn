@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgpw6veqk34pt"]
+
+[ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_a7ku8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ui6bb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwlyp"]
+atlas = ExtResource("1_a7ku8")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sefn"]
+atlas = ExtResource("1_a7ku8")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydwt7"]
+atlas = ExtResource("1_a7ku8")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqejw"]
+atlas = ExtResource("1_a7ku8")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkaqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwlyp")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sefn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydwt7")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqejw")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="EnemyA" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ui6bb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pkaqa")
+animation = &"new_animation"
+frame_progress = 0.755419
