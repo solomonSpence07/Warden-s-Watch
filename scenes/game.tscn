@@ -275,5 +275,3 @@ layer_1/tile_data = PackedInt32Array(1179717, 458752, 12, 1245253, 458752, 12, 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1008, 239)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
