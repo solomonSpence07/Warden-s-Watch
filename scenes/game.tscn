@@ -286,13 +286,6 @@ position = Vector2(1008, 239)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0qgyx")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="EnemyA" parent="Path2D" instance=ExtResource("2_e5yms")]
 position = Vector2(919, 4)
-rotation = 1.5467
-
-[node name="EnemyA" parent="Path2D/PathFollow2D" instance=ExtResource("2_e5yms")]
-position = Vector2(-26.137, 918.637)
-rotation = -1.5467
-
-[node name="EnemyA" parent="." instance=ExtResource("2_e5yms")]
-position = Vector2(920, 1)
+rotates = false

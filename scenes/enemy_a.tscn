@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgpw6veqk34pt"]
+[gd_scene load_steps=10 format=3 uid="uid://bgpw6veqk34pt"]
 
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_a7ku8"]
 [ext_resource type="Script" path="res://scenes/PathFollow2D.gd" id="1_o1vk4"]
@@ -6,6 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui6bb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwlyp"]
+atlas = ExtResource("1_a7ku8")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlx6e"]
 atlas = ExtResource("1_a7ku8")
 region = Rect2(64, 32, 16, 16)
 
@@ -26,6 +30,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rwlyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlx6e")
 }],
 "loop": true,
 "name": &"Down",
@@ -39,7 +46,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ydwt7")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"left_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -52,14 +59,19 @@ animations = [{
 }]
 
 [node name="EnemyA" type="PathFollow2D"]
-
-[node name="PathFollow2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_o1vk4")
 
+[node name="PathFollow2D" type="CharacterBody2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D"]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ui6bb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+position = Vector2(0, -9)
+scale = Vector2(1, 1.125)
 sprite_frames = SubResource("SpriteFrames_pkaqa")
-animation = &"new_animation"
-frame_progress = 0.755419
+animation = &"Down"
+autoplay = "left_right"
+frame_progress = 0.774727
