@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://doha3qwt4bfpr"]
+[gd_scene load_steps=9 format=3 uid="uid://doha3qwt4bfpr"]
 
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_gxcab"]
 [ext_resource type="PackedScene" uid="uid://bgpw6veqk34pt" path="res://scenes/enemy_a.tscn" id="2_e5yms"]
+[ext_resource type="PackedScene" uid="uid://bivouxso5ycrc" path="res://scenes/turn_down.tscn" id="3_uofmb"]
+[ext_resource type="PackedScene" uid="uid://bbn7tk86exddc" path="res://scenes/turn_right.tscn" id="4_1wjfh"]
+[ext_resource type="PackedScene" uid="uid://p7r15h1gucpd" path="res://scenes/turn_left.tscn" id="5_cbwnl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv2b6"]
 texture = ExtResource("1_gxcab")
@@ -286,13 +289,51 @@ position = Vector2(1008, 239)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0qgyx")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="EnemyA" parent="Path2D" instance=ExtResource("2_e5yms")]
 position = Vector2(919, 4)
-rotation = 1.5467
+rotates = false
 
-[node name="EnemyA" parent="Path2D/PathFollow2D" instance=ExtResource("2_e5yms")]
-position = Vector2(-26.137, 918.637)
-rotation = -1.5467
+[node name="turnDown" type="Node" parent="."]
 
-[node name="EnemyA" parent="." instance=ExtResource("2_e5yms")]
-position = Vector2(920, 1)
+[node name="TurnDown" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(1000, 91)
+
+[node name="TurnDown2" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(1079, 200)
+
+[node name="TurnDown3" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(1111, 249)
+
+[node name="TurnDown4" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(999, 361)
+
+[node name="TurnDown5" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(1094, 424)
+
+[node name="TurnDown6" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(1001, 454)
+
+[node name="TurnDown7" parent="turnDown" instance=ExtResource("3_uofmb")]
+position = Vector2(918, -6)
+
+[node name="turnLeft" type="Node" parent="."]
+
+[node name="turn_left" parent="turnLeft" instance=ExtResource("5_cbwnl")]
+position = Vector2(1112, 356)
+
+[node name="turn_left2" parent="turnLeft" instance=ExtResource("5_cbwnl")]
+position = Vector2(1094, 457)
+
+[node name="turnRight" type="Node" parent="."]
+
+[node name="turn_right" parent="turnRight" instance=ExtResource("4_1wjfh")]
+position = Vector2(922, 85)
+
+[node name="turn_right2" parent="turnRight" instance=ExtResource("4_1wjfh")]
+position = Vector2(1003, 197)
+
+[node name="turn_right3" parent="turnRight" instance=ExtResource("4_1wjfh")]
+position = Vector2(1081, 246)
+
+[node name="turn_right4" parent="turnRight" instance=ExtResource("4_1wjfh")]
+position = Vector2(998, 425)
