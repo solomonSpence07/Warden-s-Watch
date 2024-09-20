@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgpw6veqk34pt"]
+[gd_scene load_steps=11 format=3 uid="uid://bgpw6veqk34pt"]
 
+[ext_resource type="Script" path="res://Scripts/EnemyA.gd" id="1_2ehpe"]
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_a7ku8"]
-[ext_resource type="Script" path="res://scenes/PathFollow2D.gd" id="1_o1vk4"]
+[ext_resource type="Texture2D" uid="uid://dtkl0ht235vby" path="res://sprites/skeleton walk.png" id="2_07nep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui6bb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwlyp"]
-atlas = ExtResource("1_a7ku8")
-region = Rect2(64, 32, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhtjj"]
+atlas = ExtResource("2_07nep")
+region = Rect2(0, 0, 13, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wlx6e"]
-atlas = ExtResource("1_a7ku8")
-region = Rect2(64, 32, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq6le"]
+atlas = ExtResource("2_07nep")
+region = Rect2(13, 0, 13, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sefn"]
 atlas = ExtResource("1_a7ku8")
@@ -29,10 +30,10 @@ region = Rect2(80, 32, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rwlyp")
+"texture": SubResource("AtlasTexture_dhtjj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wlx6e")
+"texture": SubResource("AtlasTexture_wq6le")
 }],
 "loop": true,
 "name": &"Down",
@@ -59,19 +60,19 @@ animations = [{
 }]
 
 [node name="EnemyA" type="PathFollow2D"]
-script = ExtResource("1_o1vk4")
+script = ExtResource("1_2ehpe")
 
-[node name="PathFollow2D" type="CharacterBody2D" parent="."]
+[node name="SkeletonBody" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkeletonBody"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ui6bb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SkeletonBody"]
 position = Vector2(0, -9)
 scale = Vector2(1, 1.125)
 sprite_frames = SubResource("SpriteFrames_pkaqa")
-animation = &"Down"
-autoplay = "left_right"
-frame_progress = 0.774727
+animation = &"left_right"
+autoplay = "Down"
+frame_progress = 0.434558
