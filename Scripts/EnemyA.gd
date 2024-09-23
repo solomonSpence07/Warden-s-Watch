@@ -1,7 +1,7 @@
 extends PathFollow2D
+class_name Enemy
 
-@onready var animated_sprite_2d = $SkeletonBody/AnimatedSprite2D
-
+@export var characterBody2D :CharacterBody2D
 @export var speed =100
 
 func _process(delta):
@@ -10,12 +10,12 @@ func _process(delta):
 
 
 func turn_down():
-	animated_sprite_2d.play("Down")
+	characterBody2D.get_child(1).play("Down")
 
 func turn_right():
-	animated_sprite_2d.play("left_right")
-	animated_sprite_2d.scale.x= 1
+	characterBody2D.get_child(1).play("left_right")
+	characterBody2D.get_child(1).scale.x= 1
 	
 func turn_left():
-	animated_sprite_2d.scale.x= -1
-	animated_sprite_2d.play("left_right")
+	characterBody2D.get_child(1).scale.x= -1
+	characterBody2D.get_child(1).play("left_right")

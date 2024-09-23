@@ -59,8 +59,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyA" type="PathFollow2D"]
+[node name="EnemyA" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
 script = ExtResource("1_2ehpe")
+characterBody2D = NodePath("SkeletonBody")
 
 [node name="SkeletonBody" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -73,6 +74,5 @@ shape = SubResource("CircleShape2D_ui6bb")
 position = Vector2(0, -9)
 scale = Vector2(1, 1.125)
 sprite_frames = SubResource("SpriteFrames_pkaqa")
-animation = &"left_right"
+animation = &"up"
 autoplay = "Down"
-frame_progress = 0.434558

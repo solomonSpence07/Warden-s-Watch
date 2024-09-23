@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://doha3qwt4bfpr"]
 
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_gxcab"]
-[ext_resource type="PackedScene" uid="uid://bgpw6veqk34pt" path="res://scenes/enemy_a.tscn" id="2_e5yms"]
 [ext_resource type="PackedScene" uid="uid://bivouxso5ycrc" path="res://scenes/turn_down.tscn" id="3_uofmb"]
 [ext_resource type="PackedScene" uid="uid://bbn7tk86exddc" path="res://scenes/turn_right.tscn" id="4_1wjfh"]
+[ext_resource type="PackedScene" uid="uid://166eslft260l" path="res://scenes/enemy_c.tscn" id="5_3qnu1"]
 [ext_resource type="PackedScene" uid="uid://p7r15h1gucpd" path="res://scenes/turn_left.tscn" id="5_cbwnl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv2b6"]
@@ -289,9 +289,8 @@ position = Vector2(1008, 239)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_0qgyx")
 
-[node name="EnemyA" parent="Path2D" instance=ExtResource("2_e5yms")]
+[node name="Enemy_C" parent="Path2D" instance=ExtResource("5_3qnu1")]
 position = Vector2(919, 4)
-rotates = false
 
 [node name="turnDown" type="Node" parent="."]
 
