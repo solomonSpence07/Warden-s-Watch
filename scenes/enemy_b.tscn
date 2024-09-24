@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxqr13plwvm0d"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyA.gd" id="1_wurhm"]
+[ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="2_7c5sb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5e6kc"]
+radius = 8.06226
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0dbx"]
+atlas = ExtResource("2_7c5sb")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjx66"]
+atlas = ExtResource("2_7c5sb")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5agm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0dbx")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjx66")
+}],
+"loop": true,
+"name": &"left_right",
+"speed": 5.0
+}]
+
+[node name="Enemy_b" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
+rotates = false
+script = ExtResource("1_wurhm")
+characterBody2D = NodePath("lilslimeBody")
+
+[node name="lilslimeBody" type="CharacterBody2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lilslimeBody"]
+shape = SubResource("CircleShape2D_5e6kc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="lilslimeBody"]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_f5agm")
+animation = &"Down"
+autoplay = "Down"

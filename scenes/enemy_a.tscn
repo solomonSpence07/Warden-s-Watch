@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgpw6veqk34pt"]
 
-[ext_resource type="Script" path="res://Scripts/EnemyA.gd" id="1_2ehpe"]
+[ext_resource type="Script" path="res://scenes/enemy_a.gd" id="1_8txkq"]
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_a7ku8"]
 [ext_resource type="Texture2D" uid="uid://dtkl0ht235vby" path="res://sprites/skeleton walk.png" id="2_07nep"]
 
@@ -59,8 +59,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyA" type="PathFollow2D"]
-script = ExtResource("1_2ehpe")
+[node name="EnemyA" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
+script = ExtResource("1_8txkq")
+characterBody2D = NodePath("SkeletonBody")
+health = 10
 
 [node name="SkeletonBody" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -73,6 +75,5 @@ shape = SubResource("CircleShape2D_ui6bb")
 position = Vector2(0, -9)
 scale = Vector2(1, 1.125)
 sprite_frames = SubResource("SpriteFrames_pkaqa")
-animation = &"left_right"
+animation = &"up"
 autoplay = "Down"
-frame_progress = 0.434558
