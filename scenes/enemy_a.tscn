@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgpw6veqk34pt"]
 
-[ext_resource type="Script" path="res://scenes/enemy_a.gd" id="1_8txkq"]
+[ext_resource type="Script" path="res://Scripts/enemy_a.gd" id="1_8txkq"]
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_a7ku8"]
 [ext_resource type="Texture2D" uid="uid://dtkl0ht235vby" path="res://sprites/skeleton walk.png" id="2_07nep"]
 
@@ -60,6 +60,7 @@ animations = [{
 }]
 
 [node name="EnemyA" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
+rotates = false
 script = ExtResource("1_8txkq")
 characterBody2D = NodePath("SkeletonBody")
 health = 10
