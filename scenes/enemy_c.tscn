@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://166eslft260l"]
+[gd_scene load_steps=7 format=3 uid="uid://dh3um46qv5gnm"]
 
-[ext_resource type="Script" path="res://Scripts/EnemyA.gd" id="1_5egen"]
+[ext_resource type="Script" path="res://Scripts/enemy_c.gd" id="1_y3y8l"]
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="2_ubxd6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_na8ho"]
@@ -32,16 +32,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy_C" type="PathFollow2D"]
+[node name="Enemy_C" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
 rotates = false
-script = ExtResource("1_5egen")
+script = ExtResource("1_y3y8l")
+characterBody2D = NodePath("ghostBody")
+health = 50
 
-[node name="bigslimeBody" type="CharacterBody2D" parent="."]
+[node name="ghostBody" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bigslimeBody"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostBody"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_na8ho")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bigslimeBody/CollisionShape2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostBody"]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wxs4w")
 animation = &"Down"
+
+[node name="invisibleTimer" type="Timer" parent="."]
+
+[node name="randomTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="invisibleTimer" to="." method="_on_invisible_timer_timeout"]
+[connection signal="timeout" from="randomTimer" to="." method="_on_random_timer_timeout"]

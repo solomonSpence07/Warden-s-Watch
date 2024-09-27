@@ -2,11 +2,11 @@ extends PathFollow2D
 class_name Enemy
 
 @export var characterBody2D :CharacterBody2D
-@export var speed =50
+@export var speed :float=50
 @export var health =1
-
+@export var speed_multiplier:float = 1
 func _process(delta):
-	progress+= speed*delta
+	progress+= speed*delta*speed_multiplier
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		takeDamage(1)
 
