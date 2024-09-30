@@ -62,10 +62,9 @@ animations = [{
 [node name="EnemyA" type="PathFollow2D" node_paths=PackedStringArray("characterBody2D")]
 rotates = false
 script = ExtResource("1_8txkq")
-speed = null
+characterBody2D = NodePath("SkeletonBody")
 health = 10
 speed_multiplier = 3.0
-characterBody2D = NodePath("SkeletonBody")
 
 [node name="SkeletonBody" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)

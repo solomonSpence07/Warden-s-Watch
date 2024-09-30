@@ -36,7 +36,7 @@ animations = [{
 rotates = false
 script = ExtResource("1_y3y8l")
 characterBody2D = NodePath("ghostBody")
-health = 50
+health = 10
 
 [node name="ghostBody" type="CharacterBody2D" parent="."]
 

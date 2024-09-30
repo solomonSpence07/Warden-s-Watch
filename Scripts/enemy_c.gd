@@ -14,18 +14,18 @@ func _ready() -> void:
 	random()
 
 func _on_random_timer_timeout():
-	modulate.a=target_opacity
+	modulate.a8=target_opacity
 	invisibleTimer.start()
 	print("invisibleTimer")
 
 func random():
-	randomTimer.wait_time=randf_range(1,1)
+	randomTimer.wait_time=randf_range(1,5)
 	randomTimer.start()
 
 func _on_invisible_timer_timeout():
 	random()
-	modulate.a=startingOpacity
+	modulate.a8=startingOpacity
 
 func _process(delta):
 	super._process(delta)
-	print(modulate.a)
+	print(modulate.a8)
