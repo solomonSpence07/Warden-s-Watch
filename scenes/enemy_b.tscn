@@ -37,7 +37,6 @@ animations = [{
 rotates = false
 script = ExtResource("1_rdgr1")
 characterBody2D = NodePath("lilslimeBody")
-health = 3
 
 [node name="lilslimeBody" type="CharacterBody2D" parent="."]
 scale = Vector2(1.5, 1.5)
