@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://doha3qwt4bfpr"]
+[gd_scene load_steps=10 format=3 uid="uid://doha3qwt4bfpr"]
 
 [ext_resource type="Texture2D" uid="uid://dyapnkiukspxw" path="res://sprites/ufeff_tiles_v2.png" id="1_gxcab"]
 [ext_resource type="Script" path="res://Scripts/wave_control.gd" id="1_sihb4"]
 [ext_resource type="PackedScene" uid="uid://bivouxso5ycrc" path="res://scenes/turn_down.tscn" id="3_uofmb"]
 [ext_resource type="PackedScene" uid="uid://bbn7tk86exddc" path="res://scenes/turn_right.tscn" id="4_1wjfh"]
 [ext_resource type="PackedScene" uid="uid://p7r15h1gucpd" path="res://scenes/turn_left.tscn" id="5_cbwnl"]
+[ext_resource type="PackedScene" uid="uid://beoa4gw8v0lmi" path="res://scenes/wave_control.tscn" id="6_bixis"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv2b6"]
 texture = ExtResource("1_gxcab")
@@ -288,6 +289,7 @@ layer_1/tile_data = PackedInt32Array(1179717, 458752, 12, 1245253, 458752, 12, 1
 position = Vector2(1008, 239)
 
 [node name="Path2D" type="Path2D" parent="."]
+unique_name_in_owner = true
 curve = SubResource("Curve2D_0qgyx")
 
 [node name="turnDown" type="Node" parent="."]
@@ -334,3 +336,5 @@ position = Vector2(1081, 246)
 
 [node name="turn_right4" parent="turnRight" instance=ExtResource("4_1wjfh")]
 position = Vector2(998, 425)
+
+[node name="waveControl" parent="." instance=ExtResource("6_bixis")]
