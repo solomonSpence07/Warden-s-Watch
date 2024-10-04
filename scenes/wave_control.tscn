@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://beoa4gw8v0lmi"]
+
+[ext_resource type="Script" path="res://Scripts/wave_control.gd" id="1_le13i"]
+
+[node name="waveControl" type="Label"]
+script = ExtResource("1_le13i")
+
+[node name="gapTimer" type="Timer" parent="."]
+wait_time = 0.8
