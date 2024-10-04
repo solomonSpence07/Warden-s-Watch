@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/wave_control.gd" id="1_le13i"]
 
-[node name="waveControl" type="Timer"]
+[node name="waveControl" type="Label"]
 script = ExtResource("1_le13i")
 
 [node name="gapTimer" type="Timer" parent="."]
-one_shot = true
+wait_time = 0.8

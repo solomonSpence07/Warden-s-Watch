@@ -329,7 +329,6 @@ position = Vector2(1081, 246)
 position = Vector2(998, 425)
 
 [node name="waveControl" parent="." instance=ExtResource("6_bixis")]
-current_wave_number = 7
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yx83v")
